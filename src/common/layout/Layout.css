@@ -1,0 +1,14 @@
+#content {
+  width: 87%;
+  background-color: aqua;
+}
+
+#sidebar {
+  width: 13%;
+}
+
+#header {
+  height: 60px;
+  padding-right: 20px;
+  line-height: 60px;
+}
