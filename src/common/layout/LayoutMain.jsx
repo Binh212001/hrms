@@ -57,7 +57,11 @@ const LayoutMain = ({ children }) => {
 
         <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
           {page.map((data) => {
-            return <MenuItem onClick={() => changePageType(data)}>{data.title}</MenuItem>;
+            return (
+              <MenuItem key={data.path} onClick={() => changePageType(data)}>
+                {data.title}
+              </MenuItem>
+            );
           })}
         </Menu>
         <Link to="/login" className="text-white px-6 ">

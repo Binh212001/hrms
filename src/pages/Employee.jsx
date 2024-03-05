@@ -38,7 +38,7 @@ function Employee() {
 
   return (
     <div>
-      <Task />
+      <Task to="/employee/new" />
       <ListView column={employeeColumn}>
         {employee?.data &&
           employee.data.map((data) => {

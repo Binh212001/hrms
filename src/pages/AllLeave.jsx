@@ -24,7 +24,7 @@ function AllLeave() {
   };
   return (
     <div>
-      <Task />
+      <Task to={"/leave/new"} />
       <ListView column={timeoffColumn}>
         {overtime?.data &&
           overtime.data.map((data) => {

@@ -27,7 +27,7 @@ function AllOverTime() {
   };
   return (
     <div>
-      <Task />
+      <Task to={"/overtime/new"} />
       <ListView column={overtimeColumn}>
         {overtime?.data &&
           overtime.data.map((data) => {

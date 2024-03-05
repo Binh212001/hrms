@@ -2,14 +2,17 @@ import { CodeSandboxOutlined, DeleteOutlined, FilterFilled, UnorderedListOutline
 import { Button } from "antd";
 import Search from "antd/es/input/Search";
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Task() {
+function Task({ to }) {
   return (
     <div className="flex justify-between  items-center p-4 border-b-2 ">
       <div style={{ width: "20%" }}>
-        <Button type="button" className="bg-green-500 border-none mr-6">
-          New
-        </Button>
+        <Link to={to}>
+          <Button type="button" className="bg-green-500 border-none mr-6">
+            New
+          </Button>
+        </Link>
         <span>
           <DeleteOutlined />
         </span>

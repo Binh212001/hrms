@@ -1,3 +1,6 @@
+import AddAttendance from "../pages/AddAttendance";
+import AddEmployee from "../pages/AddEmployee";
+import AddOvertime from "../pages/AddOvertime";
 import AllAttendance from "../pages/AllAttendance";
 import AllLeave from "../pages/AllLeave";
 import AllOverTime from "../pages/AllOverTime";
@@ -8,6 +11,7 @@ import Login from "../pages/Login";
 import MyAttendance from "../pages/MyAttendance";
 import MyLeave from "../pages/MyLeave";
 import MyOverTime from "../pages/MyOverTime";
+import AddLeave from "../pages/AddLeave";
 
 const router = [
   {
@@ -21,6 +25,27 @@ const router = [
     component: <Employee />,
     layout: true,
     page: 1,
+  },
+  {
+    path: "/employee/new",
+    component: <AddEmployee />,
+    layout: true,
+  },
+
+  {
+    path: "/attendance/new",
+    component: <AddAttendance />,
+    layout: true,
+  },
+  {
+    path: "/overtime/new",
+    component: <AddOvertime />,
+    layout: true,
+  },
+  {
+    path: "/leave/new",
+    component: <AddLeave />,
+    layout: true,
   },
   {
     path: "/employee/contract",
