@@ -2,8 +2,7 @@ import React from "react";
 import Task from "../common/Task";
 import ListView from "../common/layout/ListView";
 import { Pagination } from "antd";
-
-const column = ["Employee Code", "Name", "Date Of Brith", "Gender", "Department", "Phone", "Email", "Job Position"];
+import { employeeColumn } from "../constants/constant";
 
 function Employee() {
   const employee = {
@@ -38,9 +37,9 @@ function Employee() {
   };
 
   return (
-    <div className="relative">
+    <div>
       <Task />
-      <ListView column={column}>
+      <ListView column={employeeColumn}>
         {employee?.data &&
           employee.data.map((data) => {
             return (

@@ -4,11 +4,17 @@ import AllOverTime from "../pages/AllOverTime";
 import Contract from "../pages/Contract";
 import Department from "../pages/Department";
 import Employee from "../pages/Employee";
+import Login from "../pages/Login";
 import MyAttendance from "../pages/MyAttendance";
 import MyLeave from "../pages/MyLeave";
 import MyOverTime from "../pages/MyOverTime";
 
 const router = [
+  {
+    path: "/login",
+    component: <Login />,
+    layout: false,
+  },
   {
     path: "/employee/all",
     title: "Employee",

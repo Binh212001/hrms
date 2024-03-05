@@ -6,7 +6,6 @@ import logo from "../../assets/img/logo.avif";
 import "./Layout.css";
 import { Link, useNavigate } from "react-router-dom";
 import MenuItem from "antd/es/menu/MenuItem";
-import { data } from "autoprefixer";
 const { Content, Footer, Sider } = Layout;
 const page = [
   {
