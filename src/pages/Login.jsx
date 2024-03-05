@@ -16,7 +16,6 @@ function Login() {
             <input type="submit" value="Sign in" />
           </div>
           <div class="links">
-            <a href="#">Forget Password</a>
             <a href="#">Contract Admintstrator</a>
           </div>
         </div>
