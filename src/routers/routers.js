@@ -27,6 +27,11 @@ const router = [
     page: 1,
   },
   {
+    path: "/employee/update/:employeeCode",
+    component: <AddEmployee />,
+    layout: true,
+  },
+  {
     path: "/employee/new",
     component: <AddEmployee />,
     layout: true,
