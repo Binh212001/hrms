@@ -1,6 +1,6 @@
 export const employeeColumn = ["Employee Code", "Name", "Date Of Brith", "Gender", "Department", "Phone", "Email", "Job Position"];
 
-export const attendanceColumn = [];
+export const attendanceColumn = ["Employee Code", "Employee Name", "Month", "Status"];
 
 export const timeoffColumn = ["Employee Code", "Employee Name", "Day", "Reason", "Status"];
 

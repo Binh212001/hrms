@@ -3,25 +3,23 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 function AddEmployee() {
-  // mode is edit  or new
   const { employeeCode } = useParams();
-  console.log("🚀 ~ AddEmployee ~ employeeCode:", employeeCode);
 
-  const newEmployee = () => {
+  const handelEmployee = () => {
     if (employeeCode) {
-      // Edit employess
+      //update
     } else {
-      // Update;
+      //edit
     }
   };
   return (
     <div className="p-4">
       <div>
-        <Button type="button" className="bg-green-500 border-none mr-6" onClick={() => newEmployee()}>
+        <Button type="button" className="bg-green-500 border-none mr-6" onClick={() => handelEmployee()}>
           Save
         </Button>
       </div>
-      <h3 className="text-xl mt-3">{employeeCode ? "Update Employee" : "New Employee"}</h3>
+      <h3 className="text-xl mt-3">{employeeCode ? "Update " : "New "} Employee</h3>
       <div class="grid grid-cols-2 gap-5 p-5 ">
         <div class="flex flex-col">
           <label htmlFor="firstname">First Name</label>

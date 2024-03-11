@@ -53,6 +53,21 @@ const router = [
     layout: true,
   },
   {
+    path: "/leave/update/:id",
+    component: <AddLeave />,
+    layout: true,
+  },
+  {
+    path: "/overtime/update/:id",
+    component: <AddOvertime />,
+    layout: true,
+  },
+  {
+    path: "/attendance/update/:id",
+    component: <AddAttendance />,
+    layout: true,
+  },
+  {
     path: "/employee/contract",
     title: "Contract",
     component: <Contract />,

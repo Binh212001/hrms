@@ -1,4 +1,4 @@
-import { CodeSandboxOutlined, DeleteOutlined, FilterFilled, UnorderedListOutlined } from "@ant-design/icons";
+import { CodeSandboxOutlined, DeleteOutlined, ImportOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import Search from "antd/es/input/Search";
 import React from "react";
@@ -21,7 +21,7 @@ function Task({ to }) {
         <Search placeholder="search" />
       </div>
       <div style={{ width: "20%" }} className="flex gap-5  justify-end">
-        <FilterFilled />
+        <ImportOutlined />
         <UnorderedListOutlined />
         <CodeSandboxOutlined />
       </div>
