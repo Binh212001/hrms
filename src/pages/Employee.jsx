@@ -1,66 +1,71 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Task from "../common/Task";
 import ListView from "../common/layout/ListView";
 import { Pagination } from "antd";
 import { employeeColumn } from "../constants/constant";
+import { useDispatch, useSelector } from "react-redux";
+import { getEmp } from "../redux/employee.slice";
 
 function Employee() {
-  const employee = {
-    page: 7,
-    data: [
-      {
-        employeeCode: "EMP001",
-        fullName: "Pham Ngoc Binh",
-        dateOfBirth: "111111",
-        gender: true,
-        department: "111",
-        phone: null,
-        email: null,
-        jobPosition: "",
-      },
-      {
-        employeeCode: "EMP002",
-        fullName: "Pham Ngoc Binh",
-        dateOfBirth: "111111",
-        gender: true,
-        department: "111",
-        phone: null,
-        email: null,
-        jobPosition: "",
-      },
-    ],
+  const [current, setCurrent] = useState(1);
+  const [limit, setLimit] = useState(1);
+
+  const { count, loading, employee } = useSelector((state) => state.employeeSlice);
+
+  let totalPage = count / limit;
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(
+      getEmp({
+        page: current,
+        limit,
+      })
+    );
+  }, [dispatch, limit, current]);
+
+  const changePage = (currentPage) => {
+    setCurrent(currentPage);
   };
 
-  const changePage = (page) => {
-    //Call api
-    console.log(page);
+  const changeLimit = (e) => {
+    setLimit(e.target.value);
   };
+  if (loading) {
+    return <>Loading</>;
+  }
 
   return (
     <div>
-      <Task to="/employee/new" />
+      <Task to="/employee/new" setLimit={setLimit} />
       <ListView column={employeeColumn}>
-        {employee?.data &&
-          employee.data.map((data) => {
-            return (
-              <tr key={data.employeeCode}>
-                <td>
-                  <input type="checkbox" name="id" />
-                </td>
-                <td>{data.employeeCode}</td>
-                <td>{data.fullName}</td>
-                <td>{data.dateOfBirth}</td>
-                <td>{data.gender ? "Male" : "Female"}</td>
-                <td>{data.department}</td>
-                <td>{data.phone}</td>
-                <td>{data.email}</td>
-                <td>{data.jobPosition}</td>
-              </tr>
-            );
-          })}
+        {employee.map((data) => {
+          return (
+            <tr key={data.employeeCode}>
+              <td>
+                <input type="checkbox" name="id" />
+              </td>
+              <td>{data.employeeCode}</td>
+              <td>{data.fullName}</td>
+              <td>{Date(data.birthday)}</td>
+              <td>{data.gender ? "Male" : "Female"}</td>
+              <td>{data.department}</td>
+              <td>{data.phone}</td>
+              <td>{data.email}</td>
+              <td>{data.jobPosition}</td>
+            </tr>
+          );
+        })}
       </ListView>
       <div className="flex  justify-center items-center">
-        <Pagination total={85} showSizeChanger onChange={(currentPage) => changePage(currentPage)} />
+        <Pagination total={totalPage} defaultPageSize={limit} current={current} onChange={(currentPage) => changePage(currentPage)} />
+        <select name="limit" value={limit} onChange={(e) => changeLimit(e)}>
+          <option value={1}>1 record</option>
+          <option value={2}>2 record</option>
+          <option value={3}>3 record</option>
+          <option value={4}>4 record</option>
+        </select>
       </div>
     </div>
   );

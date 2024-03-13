@@ -4,7 +4,10 @@ import Search from "antd/es/input/Search";
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Task({ to }) {
+function Task({ to, setLimit }) {
+  const handleLimit = (e) => {
+    setLimit(e.target.value);
+  };
   return (
     <div className="flex justify-between  items-center p-4 border-b-2 ">
       <div style={{ width: "20%" }}>

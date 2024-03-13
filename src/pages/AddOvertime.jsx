@@ -19,7 +19,7 @@ function AddOvertime() {
           Save
         </Button>
       </div>
-      <h3 className="text-xl mt-3"> {id ? "Update " : "New "} Overtime</h3>
+      <h3 className="text-xl mt-3"> {id ? "Update " : "New "} Overtime  </h3>
       <div class="grid grid-cols-2 gap-5 p-5 ">
         <div class="flex flex-col">
           <label htmlFor="firstname">First Name</label>

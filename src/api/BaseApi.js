@@ -12,7 +12,7 @@ const baseApi = axios.create({
 
 baseApi.interceptors.response.use(
   (res) => {
-    return res;
+    return res.data;
   },
   (err) => {
     return Promise.reject(err);
